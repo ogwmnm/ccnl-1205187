@@ -4,6 +4,26 @@
   margin-top: 50px;
 }
 
+/*  サイドバー
+-----------------------------*/
+.side-nav {
+  display: none;
+}
+
+@media(min-width: 768px) {
+  .side-nav {
+    display: block;
+    width: 220px;
+  }
+}
+
+@media(min-width: 992px) {
+  .side-nav {
+    display: block;
+    width: 293px;
+  }
+}
+
 /*  フッター
 -----------------------------*/
 .footer {
