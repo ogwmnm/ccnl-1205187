@@ -1,0 +1,30 @@
+/*  Bootstrap の上書き・追加
+-----------------------------*/
+.jumbotron {
+  margin-top: 50px;
+}
+
+/*  フッター
+-----------------------------*/
+.footer {
+  margin-top: 60px;
+  padding: 60px 0;
+  background-color: #eee;
+}
+
+/*  TOPへ戻るボタン
+-----------------------------*/
+.back-to-top-btn {
+  position: fixed;
+  bottom: 12px;
+  right: 24px;
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+
+.back-to-top-btn:hover,
+.back-to-top-btn:focus {
+  color: #fff;
+  opacity: .9;
+}
