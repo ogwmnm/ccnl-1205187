@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>【サイトのタイトル】</title>
   <meta name="description" content="【サイトの説明】">
-  <meta property="og:title" content="【サイトのタイトル】">
-  <meta property="og:description" content="【サイトの説明】">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="【サイトのURL】">
-  <meta property="og:image" content="【サイトの画像（なければこの行を消してください）】">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -180,6 +175,11 @@
   <a class="back-to-top-btn" id="js-back-to-top-btn" href="#" style="display: none;">
     <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
   </a>
+
+  <!-- 読み込み中のオーバーレイ表示 -->
+  <div class="loading-overlay" id="js-loading-overlay">
+    <span class="loading-spinner">Loading...</span>
+  </div>
 
   <script src="./js/jquery-3.1.1.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>

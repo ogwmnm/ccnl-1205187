@@ -97,4 +97,12 @@
     }
   });
 
+  // ---------------------------------------------------------
+
+  $window.on("load", function() {
+    setTimeout(function() {
+      $("#js-loading-overlay").fadeOut();
+    }, 1000);
+  });
+
 })(jQuery);
