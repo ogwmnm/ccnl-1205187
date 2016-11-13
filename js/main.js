@@ -20,6 +20,7 @@
     $("body, html").animate({ scrollTop: 0 }, 500);
   });
 
+  // ---------------------------------------------------------
 
   var navbar = {},  $navbar = $("#js-navbar"),
       header = {},  $header = $("#js-header"),
@@ -67,5 +68,33 @@
 
       }
     });
+
+  // ---------------------------------------------------------
+
+  var $linkList = $("#js-side-nav").find("[href^='#']"),
+      map = {};
+
+  $linkList.each(function() {
+    var $link = $(this),
+        id = $link.attr("href"),
+        $section = $(id);
+
+    map[id] = {
+      id: id,
+      $link: $link,
+      position: $section.offset().top - 10
+    };
+  });
+
+  $window.on("scroll", function() {
+    for (var id in map) {
+      if (map.hasOwnProperty(id)) {
+        if ($window.scrollTop() > map[id].position - 50) {
+          $linkList.removeClass("active");
+          map[id].$link.addClass("active");
+        }
+      }
+    }
+  });
 
 })(jQuery);
