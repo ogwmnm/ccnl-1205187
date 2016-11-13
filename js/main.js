@@ -74,6 +74,7 @@
   var $linkList = $("#js-side-nav").find("[href^='#']"),
       map = {};
 
+  // リンクとセクションのマップをつくる
   $linkList.each(function() {
     var $link = $(this),
         id = $link.attr("href"),
@@ -82,20 +83,35 @@
     map[id] = {
       id: id,
       $link: $link,
-      position: $section.offset().top - 10
+      position: $section.offset().top - 110
     };
   });
 
-  $window.on("scroll", function() {
-    for (var id in map) {
-      if (map.hasOwnProperty(id)) {
-        if ($window.scrollTop() > map[id].position - 120) {
-          $linkList.removeClass("active");
-          map[id].$link.addClass("active");
-        }
-      }
+  $linkList.on("click", function(e) {
+    // リンク先と現在のハッシュが同じだったら何もしない
+    if ($(this).attr("href") === location.hash) {
+      e.preventDefault();
     }
   });
+
+  $window
+    .on("scroll", function() {
+      // スクロールしたら現在地に応じたナビゲーションをハイライトする
+      for (var id in map) {
+        if (map.hasOwnProperty(id)) {
+          if ($window.scrollTop() > map[id].position - 10) {
+            $linkList.removeClass("active");
+            map[id].$link.addClass("active");
+          }
+        }
+      }
+    })
+    .on("hashchange", function(e) {
+      // ハッシュに応じたセクションまでスクロールする
+      if (map[location.hash]) {
+        $window.scrollTop(map[location.hash].position);
+      }
+    });
 
   // ---------------------------------------------------------
 
