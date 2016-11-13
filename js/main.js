@@ -89,7 +89,7 @@
   $window.on("scroll", function() {
     for (var id in map) {
       if (map.hasOwnProperty(id)) {
-        if ($window.scrollTop() > map[id].position - 50) {
+        if ($window.scrollTop() > map[id].position - 100) {
           $linkList.removeClass("active");
           map[id].$link.addClass("active");
         }
