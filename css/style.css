@@ -39,12 +39,12 @@
   bottom: 12px;
   right: 24px;
   font-size: 48px;
-  color: #fff;
+  color: #222;
   text-shadow: 0 2px 3px rgba(0,0,0,.2);
 }
 
 .back-to-top-btn:hover,
 .back-to-top-btn:focus {
-  color: #fff;
+  color: #222;
   opacity: .9;
 }
