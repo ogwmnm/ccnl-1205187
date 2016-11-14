@@ -2,8 +2,12 @@
 
   "use strict";
 
-  var $window = $(window),
-      $backToTopBtn = $("#js-back-to-top-btn");
+  var $window = $(window);
+
+
+  /*  TOPに戻るボタン
+  ------------------------------------------------------------*/
+  var $backToTopBtn = $("#js-back-to-top-btn");
 
   // 600pxスクロールしたらTOPに戻るボタンをふわっと表示する
   $window.on("scroll", function() {
@@ -20,8 +24,9 @@
     $("body, html").animate({ scrollTop: 0 }, 500);
   });
 
-  // ---------------------------------------------------------
 
+  /*  サイドメニュー固定
+  ------------------------------------------------------------*/
   var navbar = {},  $navbar = $("#js-navbar"),
       header = {},  $header = $("#js-header"),
       sideNav = {}, $sideNav = $("#js-side-nav"),
@@ -69,8 +74,9 @@
       }
     });
 
-  // ---------------------------------------------------------
 
+  /*  サイドメニューの scroll spy
+  ------------------------------------------------------------*/
   var $linkList = $("#js-side-nav").find("[href^='#']"),
       map = {};
 
@@ -113,15 +119,18 @@
       }
     });
 
-  // ---------------------------------------------------------
 
+  /*  ローディング表示
+  ------------------------------------------------------------*/
   $window.on("load", function() {
     setTimeout(function() {
       $("#js-loading-overlay").fadeOut();
     }, 1000);
   });
 
-  // Run prettyPrint.
+
+  /*  Pretty Print
+  ------------------------------------------------------------*/
   PR.prettyPrint();
 
 })(jQuery);
