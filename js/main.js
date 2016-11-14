@@ -121,4 +121,7 @@
     }, 1000);
   });
 
+  // Run prettyPrint.
+  PR.prettyPrint();
+
 })(jQuery);
